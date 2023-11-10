@@ -1,12 +1,9 @@
-package br.com.cafetecnico.solid.modelo;
+package br.com.cafetecnico.solid.lsp.problema;
 
 import java.math.BigDecimal;
 
-import br.com.cafetecnico.solid.lsp.problema.VeiculoTripulavel;
-
-public class Carro implements VeiculoTripulavel{
+public class Moto implements VeiculoTripulavel{
 	
-
 	private Long id;
 	
 	private String marca;
@@ -17,17 +14,14 @@ public class Carro implements VeiculoTripulavel{
 	
 	private BigDecimal preco;
 
-	private int quantidadePortas;
-
 	private int quantidadeAcentos;
 
-	public Carro(Long id, String marca, String modelo, int ano, BigDecimal preco, int quantidadePortas, int quantidadeAcentos) {
+	public Moto(Long id, String marca, String modelo, int ano, BigDecimal preco, int quantidadeAcentos) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.ano = ano;
 		this.preco = preco;
 		this.id = id;
-		this.quantidadePortas = quantidadePortas;
 		this.quantidadeAcentos = quantidadeAcentos;
 	}
 
@@ -73,7 +67,7 @@ public class Carro implements VeiculoTripulavel{
 
 	@Override
 	public int getQuantidadePortas() {
-		return this.quantidadePortas;
+		throw new IllegalStateException("A moto não possui Portas");
 	}
 
 	@Override

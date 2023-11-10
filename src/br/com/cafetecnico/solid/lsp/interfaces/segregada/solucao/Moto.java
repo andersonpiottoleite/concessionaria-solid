@@ -1,12 +1,9 @@
-package br.com.cafetecnico.solid.modelo;
+package br.com.cafetecnico.solid.lsp.interfaces.segregada.solucao;
 
 import java.math.BigDecimal;
 
-import br.com.cafetecnico.solid.lsp.problema.VeiculoTripulavel;
-
-public class Carro implements VeiculoTripulavel{
+public class Moto implements VeiculoTripulavelAberto{
 	
-
 	private Long id;
 	
 	private String marca;
@@ -17,17 +14,14 @@ public class Carro implements VeiculoTripulavel{
 	
 	private BigDecimal preco;
 
-	private int quantidadePortas;
-
 	private int quantidadeAcentos;
 
-	public Carro(Long id, String marca, String modelo, int ano, BigDecimal preco, int quantidadePortas, int quantidadeAcentos) {
+	public Moto(Long id, String marca, String modelo, int ano, BigDecimal preco, int quantidadeAcentos) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.ano = ano;
 		this.preco = preco;
 		this.id = id;
-		this.quantidadePortas = quantidadePortas;
 		this.quantidadeAcentos = quantidadeAcentos;
 	}
 
@@ -69,11 +63,6 @@ public class Carro implements VeiculoTripulavel{
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	@Override
-	public int getQuantidadePortas() {
-		return this.quantidadePortas;
 	}
 
 	@Override
